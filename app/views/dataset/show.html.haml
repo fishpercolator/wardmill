@@ -1,6 +1,7 @@
 %h1 Dataset: #{@dataset.title}
-%ul
+%ul.wards
   - Ward.all.each do |w|
-    %li
+    - count = @dataset.data_rows.where(ward: w).count
+    %li{style: "background-color: #{count_color(count)}"}
       = link_to w.name, w
-      (#{@dataset.data_rows.where(ward: w).count})
+      (#{count})
