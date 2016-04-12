@@ -2,7 +2,7 @@
   #{@ward.name} Data Mill
 %h1 #{@ward.name} Data Mill
 - @ward.datasets.each do |dataset, rows|
-  %h2= dataset.name
+  %h2= dataset.title
   %table.table.table-striped.scroller
     - rows.each do |row|
       %tr

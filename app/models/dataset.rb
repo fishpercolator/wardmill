@@ -4,9 +4,11 @@ class Dataset < ActiveRecord::Base
   has_many :data_rows, dependent: :delete_all
   
   def self.load_from_ldm(slug)
-    res = CKAN::Package.find(name: slug).first.resources.first
+    pkg = CKAN::Package.find(name: slug).first
+    res = pkg.resources.first
     new do |ds|
       ds.name = slug
+      ds.title = pkg.title
       CSV.new(open(res.url_safe), headers: true).each do |row|
         ward = DataRow.find_ward(row)
         if !ward
