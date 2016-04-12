@@ -1,0 +1,6 @@
+%h1 Dataset: #{@dataset.title}
+%ul
+  - Ward.all.each do |w|
+    %li
+      = link_to w.name, w
+      (#{@dataset.data_rows.where(ward: w).count})
