@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dataset_id: 
+  ward_id: 
+  row: MyString
+
+two:
+  dataset_id: 
+  ward_id: 
+  row: MyString
