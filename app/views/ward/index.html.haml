@@ -1,0 +1,4 @@
+%h1 Wards
+%ul
+  - @wards.each do |w|
+    %li= link_to w.name, w

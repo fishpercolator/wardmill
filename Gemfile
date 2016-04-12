@@ -34,6 +34,10 @@ gem 'puma', '~> 2.16'
 # gem 'capistrano-rails', group: :development
 
 gem 'ckan', github: 'fishpercolator/CKAN'
+gem 'haml-rails'
+gem 'bootstrap-sass', '~> 3.3'
+gem 'bootswatch-rails', '~> 3.3'
+gem 'map_h'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

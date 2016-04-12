@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : 'Ward Data Mill'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Ward Data Mill'}"}
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = favicon_link_tag
+    = csrf_meta_tags
+  %body
+    %header
+      = render 'layouts/navigation'
+    %main{:role => "main"}
+      .container
+        = render 'layouts/messages'
+        = yield
+      .push
+    %footer
+      .pull-right
+        &copy; 2016 
+        = link_to 'Fish Percolator', 'https://fishpercolator.co.uk/'
+        (#{link_to raw('<span class="hidden-xs">source available on </span>GitHub'), 'https://github.com/fishpercolator/wardmill'})
